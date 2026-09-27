@@ -43,7 +43,7 @@ export default function MainLayout() {
       <aside className={`fixed lg:sticky top-0 left-0 z-50 h-screen w-64 bg-white border-r-2 border-brand-dark flex flex-col transition-transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="p-4 border-b-2 border-brand-dark flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="RIVORA" className="h-10 object-contain" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="RIVORA" className="h-10 object-contain" />
           </div>
           <button className="lg:hidden" onClick={() => setSidebarOpen(false)}>
             <X className="w-5 h-5" />

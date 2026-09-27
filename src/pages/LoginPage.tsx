@@ -43,8 +43,8 @@ export default function LoginPage() {
         </button>
 
         <Card className="mb-8 relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-4 opacity-10">
-            <img src="/logo.png" alt="RIVORA" className="w-32 h-32 object-contain" />
+          <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="RIVORA" className="w-32 h-32 object-contain" />
           </div>
           
           <div className="relative z-10">

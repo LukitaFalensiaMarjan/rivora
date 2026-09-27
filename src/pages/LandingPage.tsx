@@ -9,7 +9,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-brand-sand topo-bg flex flex-col">
       <header className="border-b-2 border-brand-dark bg-white p-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="RIVORA" className="h-12 object-contain" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="RIVORA" className="h-12 object-contain" />
         </div>
         <Button onClick={() => navigate('/login')}>Masuk</Button>
       </header>
@@ -30,28 +30,8 @@ export default function LandingPage() {
             </div>
           </div>
           
-          <div className="relative">
-            <div className="border-2 border-brand-dark shadow-[8px_8px_0px_0px_rgba(23,23,23,1)] bg-white overflow-hidden aspect-video relative">
-              <img src="/river_monitoring.jpg" alt="Simulasi Monitoring" className="w-full h-full object-cover grayscale opacity-80" />
-              <div className="absolute inset-0 bg-brand-forest/20 mix-blend-multiply"></div>
-              
-              {/* Overlay UI mockup */}
-              <div className="absolute top-4 left-4 bg-brand-dark text-white px-2 py-1 text-xs font-mono font-bold border border-white/20">
-                NODE: RIV-01 | ONLINE
-              </div>
-              
-              {/* Fake bounding box */}
-              <div className="absolute top-1/2 left-1/3 w-24 h-16 border-2 border-brand-warning bg-brand-warning/20">
-                <div className="absolute -top-6 left-[-2px] bg-brand-warning text-black text-[10px] font-bold px-1 whitespace-nowrap border-2 border-brand-warning">
-                  Deteksi: Anomali (87%)
-                </div>
-              </div>
-              
-              <div className="absolute bottom-4 right-4 bg-white border-2 border-brand-dark p-2 text-xs font-mono flex gap-4 shadow-[2px_2px_0px_0px_rgba(23,23,23,1)]">
-                <div>pH: <span className="font-bold text-brand-forest">6.8</span></div>
-                <div>Lvl: <span className="font-bold text-brand-warning">84cm</span></div>
-              </div>
-            </div>
+          <div className="relative flex justify-center items-center">
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="RIVORA" className="w-2/3 max-w-sm object-contain drop-shadow-xl animate-pulse" style={{ animationDuration: '3s' }} />
           </div>
         </section>
 

@@ -66,7 +66,7 @@ export default function LiveCamera() {
             </div>
 
             {/* Base Image */}
-            <img src="/river_monitoring.jpg" alt="Live River Stream" className="w-full h-full object-cover" />
+            <img src={`${import.meta.env.BASE_URL}river_monitoring.jpg`} alt="Live River Stream" className="w-full h-full object-cover" />
             
             {/* AI Bounding Boxes */}
             {scenario.cameraDetections.map((det, i) => {
