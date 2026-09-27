@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
@@ -24,7 +24,7 @@ const RequireOperator = ({ children }: { children: ReactNode }) => {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -41,7 +41,7 @@ function App() {
           <Route path="/operator/reports" element={<RequireOperator><Laporan /></RequireOperator>} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
