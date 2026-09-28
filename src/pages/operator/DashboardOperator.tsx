@@ -206,7 +206,7 @@ export default function DashboardOperator() {
                 <div 
                   key={i} 
                   className="absolute border-2 border-brand-warning bg-brand-warning/20 shadow-[0_0_5px_rgba(245,158,11,0.5)]"
-                  style={{ left: \`\${det.box.x}%\`, top: \`\${det.box.y}%\`, width: \`\${det.box.w}%\`, height: \`\${det.box.h}%\` }}
+                  style={{ left: `${det.box.x}%`, top: `${det.box.y}%`, width: `${det.box.w}%`, height: `${det.box.h}%` }}
                 ></div>
               ))}
             </div>

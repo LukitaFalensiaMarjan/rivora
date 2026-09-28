@@ -101,7 +101,7 @@ export default function DashboardMasyarakat() {
                 <div 
                   key={i} 
                   className="absolute border-2 border-brand-warning bg-brand-warning/20 transition-all duration-300"
-                  style={{ left: \`\${det.box.x}%\`, top: \`\${det.box.y}%\`, width: \`\${det.box.w}%\`, height: \`\${det.box.h}%\` }}
+                  style={{ left: `${det.box.x}%`, top: `${det.box.y}%`, width: `${det.box.w}%`, height: `${det.box.h}%` }}
                 >
                   <div className="absolute -top-6 left-[-2px] bg-brand-warning text-black text-[10px] font-bold px-1 whitespace-nowrap border-2 border-brand-warning shadow-[2px_2px_0px_0px_rgba(23,23,23,1)]">
                     {det.class} ({det.confidence}%)

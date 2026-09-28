@@ -78,7 +78,7 @@ export default function LiveCamera() {
                 <div 
                   key={i} 
                   className={`absolute border-4 ${colorClass} transition-all duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)]`}
-                  style={{ left: \`\${det.box.x}%\`, top: \`\${det.box.y}%\`, width: \`\${det.box.w}%\`, height: \`\${det.box.h}%\` }}
+                  style={{ left: `${det.box.x}%`, top: `${det.box.y}%`, width: `${det.box.w}%`, height: `${det.box.h}%` }}
                 >
                   {/* Corner Accents */}
                   <div className={`absolute -top-1 -left-1 w-3 h-3 border-t-4 border-l-4 ${colorClass}`}></div>
