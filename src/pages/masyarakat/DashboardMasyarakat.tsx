@@ -94,8 +94,7 @@ export default function DashboardMasyarakat() {
               <span className="text-xs font-mono bg-brand-forest px-2 py-0.5 border border-white/20">AKTIF</span>
             </div>
             <div className="relative aspect-video bg-gray-200 overflow-hidden">
-              <img src={`${import.meta.env.BASE_URL}${scenario.imageSrc || 'river_monitoring.jpg'}`} alt="Live River" className="w-full h-full object-cover grayscale opacity-90" />
-              <div className="absolute inset-0 bg-brand-forest/10 mix-blend-multiply"></div>
+              <img src={`${import.meta.env.BASE_URL}${scenario.imageSrc || 'river_monitoring.jpg'}`} alt="Live River" className="w-full h-full object-cover" />
               
               {!scenario.imageSrc && scenario.cameraDetections.map((det, i) => (
                 <div 
