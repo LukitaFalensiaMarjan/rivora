@@ -34,6 +34,7 @@ export interface ScenarioData {
   forecast6h: RiskLevel;
   cameraDetections: CameraDetection[];
   history: Telemetry[];
+  imageSrc?: string;
 }
 
 const scenarios: Record<string, ScenarioData> = {
@@ -60,10 +61,16 @@ const scenarios: Record<string, ScenarioData> = {
     forecast1h: 'Perlu Perhatian',
     forecast3h: 'Perlu Perhatian',
     forecast6h: 'Minim Risiko',
+    imageSrc: 'river_trash.jpg',
     cameraDetections: [
-      { class: 'Sampah Plastik', confidence: 91, box: { x: 18, y: 45, w: 18, h: 18 }, type: 'warning' },
-      { class: 'Objek Mengapung', confidence: 87, box: { x: 60, y: 40, w: 18, h: 15 }, type: 'warning' },
-      { class: 'Objek Berbahaya', confidence: 78, box: { x: 44, y: 70, w: 20, h: 20 }, type: 'critical' }
+      { class: 'Sampah Plastik', confidence: 98, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Lainnya', confidence: 88, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Lainnya', confidence: 85, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 92, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 90, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 94, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 97, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 96, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' }
     ],
     history: Array.from({length: 6}, (_, i) => ({ pH: 6.5 - i*0.1, tds: 500 + i*60, do: 5.0 - i*0.3, temp: 27 + i*0.2, waterLevel: 42, rainfall: 0, time: `${i+6}:00` }))
   },

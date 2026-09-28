@@ -200,13 +200,13 @@ export default function DashboardOperator() {
             </h3>
             
             <div className="relative aspect-video bg-gray-900 border-2 border-brand-dark overflow-hidden mb-3">
-              <img src="/river_monitoring.jpg" alt="Mini Feed" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}${scenario.imageSrc || 'river_monitoring.jpg'}`} alt="Mini Feed" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-brand-water/10 mix-blend-overlay"></div>
-              {scenario.cameraDetections.map((det, i) => (
+              {!scenario.imageSrc && scenario.cameraDetections.map((det, i) => (
                 <div 
                   key={i} 
                   className="absolute border-2 border-brand-warning bg-brand-warning/20 shadow-[0_0_5px_rgba(245,158,11,0.5)]"
-                  style={{ left: `${det.box.x}%`, top: `${det.box.y}%`, width: `${det.box.w}%`, height: `${det.box.h}%` }}
+                  style={{ left: \`\${det.box.x}%\`, top: \`\${det.box.y}%\`, width: \`\${det.box.w}%\`, height: \`\${det.box.h}%\` }}
                 ></div>
               ))}
             </div>
