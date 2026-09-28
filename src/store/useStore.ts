@@ -48,7 +48,17 @@ const scenarios: Record<string, ScenarioData> = {
     forecast1h: 'Minim Risiko',
     forecast3h: 'Minim Risiko',
     forecast6h: 'Sangat Minim Risiko',
-    cameraDetections: [],
+    imageSrc: 'river_trash.jpg',
+    cameraDetections: [
+      { class: 'Sampah Plastik', confidence: 98, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Lainnya', confidence: 88, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Lainnya', confidence: 85, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 92, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 90, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 94, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 97, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 96, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' }
+    ],
     history: Array.from({length: 6}, (_, i) => ({ pH: 7.1, tds: 345 + i, do: 6.7 + Math.random()*0.2, temp: 26.4, waterLevel: 44 + Math.random(), rainfall: 0, time: `${i+6}:00` }))
   },
   'kualitas_buruk': {
@@ -99,8 +109,16 @@ const scenarios: Record<string, ScenarioData> = {
     forecast1h: 'Berisiko Tinggi',
     forecast3h: 'Berisiko Tinggi',
     forecast6h: 'Risiko Meningkat',
+    imageSrc: 'river_trash.jpg',
     cameraDetections: [
-      { class: 'Objek Tidak Wajar', confidence: 74, box: { x: 30, y: 80, w: 20, h: 15 }, type: 'critical' }
+      { class: 'Sampah Plastik', confidence: 98, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Lainnya', confidence: 88, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Lainnya', confidence: 85, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 92, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 90, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 94, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 97, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
+      { class: 'Sampah Plastik', confidence: 96, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' }
     ],
     history: Array.from({length: 6}, (_, i) => ({ pH: 6.9, tds: 450 + i*20, do: 5.5, temp: 25, waterLevel: 60 + i*11, rainfall: 10 + i*7, time: `${i+6}:00` }))
   }
