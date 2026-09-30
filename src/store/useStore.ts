@@ -59,14 +59,7 @@ const scenarios: Record<string, ScenarioData> = {
       { class: 'Sampah Plastik', confidence: 97, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
       { class: 'Sampah Plastik', confidence: 96, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' }
     ],
-    history: [
-      { pH: 7.1, tds: 345, do: 6.7, temp: 26.4, waterLevel: 44.1, rainfall: 0, time: "06:00" },
-      { pH: 7.1, tds: 346, do: 6.8, temp: 26.4, waterLevel: 44.3, rainfall: 0, time: "07:00" },
-      { pH: 7.1, tds: 347, do: 6.8, temp: 26.4, waterLevel: 44.2, rainfall: 0, time: "08:00" },
-      { pH: 7.1, tds: 348, do: 6.9, temp: 26.4, waterLevel: 44.5, rainfall: 0, time: "09:00" },
-      { pH: 7.1, tds: 349, do: 6.8, temp: 26.4, waterLevel: 44.8, rainfall: 0, time: "10:00" },
-      { pH: 7.1, tds: 350, do: 6.7, temp: 26.4, waterLevel: 45.0, rainfall: 0, time: "11:00" }
-    ]
+    history: Array.from({length: 6}, (_, i) => ({ pH: 7.1, tds: 345 + i, do: 6.7 + Math.random()*0.2, temp: 26.4, waterLevel: 44 + Math.random(), rainfall: 0, time: `${i+6}:00` }))
   },
   'kualitas_buruk': {
     id: 'kualitas_buruk',
@@ -89,14 +82,7 @@ const scenarios: Record<string, ScenarioData> = {
       { class: 'Sampah Plastik', confidence: 97, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
       { class: 'Sampah Plastik', confidence: 96, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' }
     ],
-    history: [
-      { pH: 6.5, tds: 500, do: 5.0, temp: 27.0, waterLevel: 42, rainfall: 0, time: "06:00" },
-      { pH: 6.4, tds: 560, do: 4.7, temp: 27.2, waterLevel: 42, rainfall: 0, time: "07:00" },
-      { pH: 6.3, tds: 620, do: 4.4, temp: 27.4, waterLevel: 42, rainfall: 0, time: "08:00" },
-      { pH: 6.2, tds: 680, do: 4.1, temp: 27.6, waterLevel: 42, rainfall: 0, time: "09:00" },
-      { pH: 6.1, tds: 740, do: 3.8, temp: 27.8, waterLevel: 42, rainfall: 0, time: "10:00" },
-      { pH: 6.0, tds: 800, do: 3.5, temp: 28.0, waterLevel: 42, rainfall: 0, time: "11:00" }
-    ]
+    history: Array.from({length: 6}, (_, i) => ({ pH: 6.5 - i*0.1, tds: 500 + i*60, do: 5.0 - i*0.3, temp: 27 + i*0.2, waterLevel: 42, rainfall: 0, time: `${i+6}:00` }))
   },
   'air_naik': {
     id: 'air_naik',
@@ -111,14 +97,7 @@ const scenarios: Record<string, ScenarioData> = {
     cameraDetections: [
       { class: 'Penyumbatan Aliran', confidence: 88, box: { x: 30, y: 50, w: 40, h: 25 }, type: 'critical' }
     ],
-    history: [
-      { pH: 7.0, tds: 400, do: 6.0, temp: 26.0, waterLevel: 45, rainfall: 5, time: "06:00" },
-      { pH: 7.0, tds: 400, do: 6.0, temp: 26.0, waterLevel: 53, rainfall: 7, time: "07:00" },
-      { pH: 7.0, tds: 400, do: 6.0, temp: 26.0, waterLevel: 61, rainfall: 9, time: "08:00" },
-      { pH: 7.0, tds: 400, do: 6.0, temp: 26.0, waterLevel: 69, rainfall: 11, time: "09:00" },
-      { pH: 7.0, tds: 400, do: 6.0, temp: 26.0, waterLevel: 77, rainfall: 13, time: "10:00" },
-      { pH: 7.0, tds: 400, do: 6.0, temp: 26.0, waterLevel: 85, rainfall: 15, time: "11:00" }
-    ]
+    history: Array.from({length: 6}, (_, i) => ({ pH: 7.0, tds: 400, do: 6.0, temp: 26.0, waterLevel: 45 + i*8, rainfall: 5 + i*2, time: `${i+6}:00` }))
   },
   'hujan_intensif': {
     id: 'hujan_intensif',
@@ -141,14 +120,7 @@ const scenarios: Record<string, ScenarioData> = {
       { class: 'Sampah Plastik', confidence: 97, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' },
       { class: 'Sampah Plastik', confidence: 96, box: { x: 0, y: 0, w: 0, h: 0 }, type: 'warning' }
     ],
-    history: [
-      { pH: 6.9, tds: 450, do: 5.5, temp: 25.0, waterLevel: 60, rainfall: 10, time: "06:00" },
-      { pH: 6.9, tds: 470, do: 5.5, temp: 25.0, waterLevel: 71, rainfall: 17, time: "07:00" },
-      { pH: 6.9, tds: 490, do: 5.5, temp: 25.0, waterLevel: 82, rainfall: 24, time: "08:00" },
-      { pH: 6.9, tds: 510, do: 5.5, temp: 25.0, waterLevel: 93, rainfall: 31, time: "09:00" },
-      { pH: 6.9, tds: 530, do: 5.5, temp: 25.0, waterLevel: 104, rainfall: 38, time: "10:00" },
-      { pH: 6.9, tds: 550, do: 5.5, temp: 25.0, waterLevel: 115, rainfall: 45, time: "11:00" }
-    ]
+    history: Array.from({length: 6}, (_, i) => ({ pH: 6.9, tds: 450 + i*20, do: 5.5, temp: 25, waterLevel: 60 + i*11, rainfall: 10 + i*7, time: `${i+6}:00` }))
   }
 };
 
@@ -224,27 +196,8 @@ export const useStore = create<AppState>((set) => ({
   togglePresentationMode: () => set((state) => ({ presentationMode: !state.presentationMode })),
 
   fluctuateTelemetry: () => set((state) => {
-    const sc = scenarios[state.currentScenario];
-    if (!sc) return state;
-
-    // Small jitter logic
-    const jitter = (val: number, maxDiff: number) => {
-      const diff = (Math.random() * maxDiff * 2) - maxDiff;
-      return Number((val + diff).toFixed(2));
-    };
-
-    scenarios[state.currentScenario] = {
-      ...sc,
-      telemetry: {
-        pH: jitter(sc.telemetry.pH, 0.05),
-        do: jitter(sc.telemetry.do, 0.1),
-        tds: Math.round(jitter(sc.telemetry.tds, 2)),
-        temp: jitter(sc.telemetry.temp, 0.1),
-        waterLevel: jitter(sc.telemetry.waterLevel, 0.5),
-        rainfall: sc.telemetry.rainfall > 0 ? jitter(sc.telemetry.rainfall, 0.5) : 0
-      }
-    };
-    return { ...state }; // Trigger re-render
+    // Made fully static as requested for presentation
+    return state;
   }),
 }));
 

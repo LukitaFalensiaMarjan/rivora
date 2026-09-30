@@ -111,35 +111,36 @@ export default function VerifikasiLaporan() {
             </Card>
 
             <Card className="bg-brand-sand border-brand-water border-2">
-              <h3 className="font-display font-bold uppercase mb-4 flex items-center gap-2">
-                <RefreshCcw className="w-5 h-5 text-brand-water" /> Cross-Reference Data Telemetri
+              <h3 className="font-display font-bold uppercase mb-4 flex items-center gap-2 text-sm">
+                <RefreshCcw className="w-5 h-5 text-brand-water" /> Proses Verifikasi RIVORA (Cross-Reference Data)
               </h3>
+              <p className="text-xs mb-4">Membandingkan laporan masyarakat dengan data akuisisi Sensor Node (ESP32) dan Edge Node Kamera.</p>
               
               <div className="grid grid-cols-3 gap-4 font-mono text-sm mb-6">
                 <div className="bg-white p-3 border-2 border-brand-dark">
-                  <div className="text-xs text-gray-500 mb-1">WATER LEVEL</div>
+                  <div className="text-xs text-gray-500 mb-1">SENSOR: WATER LEVEL</div>
                   <div className="font-bold">{scenario.telemetry.waterLevel.toFixed(1)} cm</div>
                 </div>
                 <div className="bg-white p-3 border-2 border-brand-dark">
-                  <div className="text-xs text-gray-500 mb-1">pH / DO</div>
-                  <div className="font-bold">{scenario.telemetry.pH} / {scenario.telemetry.do}</div>
+                  <div className="text-xs text-gray-500 mb-1">SENSOR: KUALITAS</div>
+                  <div className="font-bold">pH {scenario.telemetry.pH} / DO {scenario.telemetry.do}</div>
                 </div>
                 <div className="bg-white p-3 border-2 border-brand-dark">
-                  <div className="text-xs text-gray-500 mb-1">CAMERA DETECTIONS</div>
-                  <div className="font-bold">{scenario.cameraDetections.length} Obj</div>
+                  <div className="text-xs text-gray-500 mb-1">EDGE NODE: KAMERA</div>
+                  <div className="font-bold">{scenario.cameraDetections.length} Anomali</div>
                 </div>
               </div>
 
               {selectedReport.status === 'Menunggu Verifikasi' || selectedReport.status === 'Perlu Ditinjau' ? (
                 <div className="border-t-2 border-brand-dark pt-6 mt-6">
-                  <h4 className="font-bold uppercase text-sm mb-4">Tindakan Operator</h4>
+                  <h4 className="font-bold uppercase text-sm mb-4">Keputusan Verifikasi</h4>
                   <div className="flex gap-4">
                     <Button 
                       variant="primary" 
-                      className="flex-1 flex justify-center items-center gap-2"
+                      className="flex-1 flex justify-center items-center gap-2 text-xs"
                       onClick={() => handleVerify('Terverifikasi')}
                     >
-                      <CheckCircle className="w-4 h-4" /> Verifikasi
+                      <CheckCircle className="w-4 h-4" /> Verifikasi & Teruskan ke Berwenang
                     </Button>
                     <Button 
                       variant="outline"

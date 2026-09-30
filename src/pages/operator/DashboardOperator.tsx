@@ -157,36 +157,56 @@ export default function DashboardOperator() {
             </MapContainer>
           </Card>
 
-          <Card>
-            <h3 className="font-display font-bold text-xl uppercase mb-4 border-b-2 border-brand-dark pb-2 flex justify-between">
-              Telemetri Fokus <span className="text-sm bg-gray-200 px-2 py-1 text-gray-600 font-mono">Node Terpilih</span>
+          <Card className="flex flex-col gap-6">
+            <h3 className="font-display font-bold text-xl uppercase border-b-2 border-brand-dark pb-2 flex justify-between items-center">
+              Analisis Komprehensif RIVORA 
+              <span className="text-sm bg-gray-200 px-2 py-1 text-gray-600 font-mono">Node Terpilih</span>
             </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-4 font-mono text-sm">
-              <div className="border-b border-gray-200 pb-2">
-                <span className="text-gray-500 block text-xs">WATER LEVEL (cm)</span>
-                <span className="text-2xl font-bold">{scenario.telemetry.waterLevel.toFixed(1)}</span>
-                <span className="ml-2 font-bold text-brand-forest">{scenario.trend}</span>
+
+            <div>
+              <h4 className="font-bold uppercase text-sm mb-3 flex items-center gap-2 border-b border-gray-200 pb-1 text-brand-dark">
+                <Cpu className="w-4 h-4" /> Kualitas Air (Sensor Node - ESP32)
+              </h4>
+              <div className="grid grid-cols-3 gap-4 font-mono text-sm">
+                <div className="bg-gray-50 p-2 border border-gray-200">
+                  <span className="text-gray-500 block text-[10px]">pH VALUE</span>
+                  <span className="text-xl font-bold">{scenario.telemetry.pH.toFixed(1)}</span>
+                </div>
+                <div className="bg-gray-50 p-2 border border-gray-200">
+                  <span className="text-gray-500 block text-[10px]">OXYGEN (DO)</span>
+                  <span className="text-xl font-bold">{scenario.telemetry.do.toFixed(1)} <span className="text-[10px]">mg/L</span></span>
+                </div>
+                <div className="bg-gray-50 p-2 border border-gray-200">
+                  <span className="text-gray-500 block text-[10px]">TDS</span>
+                  <span className="text-xl font-bold">{scenario.telemetry.tds} <span className="text-[10px]">ppm</span></span>
+                </div>
               </div>
-              <div className="border-b border-gray-200 pb-2">
-                <span className="text-gray-500 block text-xs">RAINFALL (mm)</span>
-                <span className="text-2xl font-bold">{scenario.telemetry.rainfall.toFixed(1)}</span>
+            </div>
+
+            <div>
+              <h4 className="font-bold uppercase text-sm mb-3 flex items-center gap-2 border-b border-gray-200 pb-1 text-brand-dark">
+                <Activity className="w-4 h-4" /> Hidrologis & Cuaca
+              </h4>
+              <div className="grid grid-cols-3 gap-4 font-mono text-sm">
+                <div className="bg-gray-50 p-2 border border-gray-200">
+                  <span className="text-gray-500 block text-[10px]">WATER LEVEL</span>
+                  <span className="text-xl font-bold">{scenario.telemetry.waterLevel.toFixed(1)} <span className="text-[10px]">cm</span></span>
+                  <span className="ml-2 text-xs font-bold text-brand-forest">{scenario.trend}</span>
+                </div>
+                <div className="bg-gray-50 p-2 border border-gray-200">
+                  <span className="text-gray-500 block text-[10px]">RAINFALL</span>
+                  <span className="text-xl font-bold">{scenario.telemetry.rainfall.toFixed(1)} <span className="text-[10px]">mm</span></span>
+                </div>
+                <div className="bg-gray-50 p-2 border border-gray-200">
+                  <span className="text-gray-500 block text-[10px]">TEMP</span>
+                  <span className="text-xl font-bold">{scenario.telemetry.temp.toFixed(1)} <span className="text-[10px]">°C</span></span>
+                </div>
               </div>
-              <div className="border-b border-gray-200 pb-2">
-                <span className="text-gray-500 block text-xs">pH VALUE</span>
-                <span className="text-2xl font-bold">{scenario.telemetry.pH.toFixed(1)}</span>
-              </div>
-              <div className="border-b border-gray-200 pb-2">
-                <span className="text-gray-500 block text-xs">OXYGEN (DO mg/L)</span>
-                <span className="text-2xl font-bold">{scenario.telemetry.do.toFixed(1)}</span>
-              </div>
-              <div className="border-b border-gray-200 pb-2">
-                <span className="text-gray-500 block text-xs">TDS (ppm)</span>
-                <span className="text-2xl font-bold">{scenario.telemetry.tds}</span>
-              </div>
-              <div className="border-b border-gray-200 pb-2">
-                <span className="text-gray-500 block text-xs">TEMP (°C)</span>
-                <span className="text-2xl font-bold">{scenario.telemetry.temp.toFixed(1)}</span>
-              </div>
+            </div>
+            
+            <div className="bg-brand-sand/30 p-3 border border-brand-dark text-xs font-mono flex flex-col gap-1">
+              <strong>Risk Assessment & Estimasi:</strong>
+              <span>Prediksi 6 jam ke depan menunjukkan tingkat risiko <strong>{scenario.forecast6h.toUpperCase()}</strong> berdasarkan tren hidrologis dan cuaca.</span>
             </div>
           </Card>
         </div>
@@ -195,8 +215,8 @@ export default function DashboardOperator() {
           {/* Mini Live Camera Feed */}
           <Card className="bg-brand-sand p-4 border-brand-water">
             <h3 className="font-bold uppercase text-sm mb-3 flex justify-between items-center">
-              <span className="flex items-center gap-2"><CameraIcon className="w-4 h-4 text-brand-water" /> Live Feed (Mini)</span>
-              <span className="text-[9px] bg-brand-critical text-white px-1 py-0.5 animate-pulse">REC</span>
+              <span className="flex items-center gap-2 truncate"><CameraIcon className="w-4 h-4 text-brand-water shrink-0" /> Edge Node (Reused Smartphone)</span>
+              <span className="text-[9px] bg-brand-critical text-white px-1 py-0.5 animate-pulse shrink-0">VISUAL AI</span>
             </h3>
             
             <div className="relative aspect-video bg-gray-900 border-2 border-brand-dark overflow-hidden mb-3">

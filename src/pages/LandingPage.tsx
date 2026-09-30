@@ -48,19 +48,19 @@ export default function LandingPage() {
               <div className="border-2 border-brand-dark p-8 shadow-[4px_4px_0px_0px_rgba(23,23,23,1)] bg-brand-sand">
                 <Cpu className="w-12 h-12 mb-6 text-brand-forest" />
                 <h3 className="text-xl font-bold uppercase mb-3">1. MONITOR</h3>
-                <p>Menggunakan dua node: <b>Sensor Node</b> (ESP32) untuk data fisik air (pH, TDS, DO, Suhu, Muka Air) dan <b>Edge Node</b> (Reused Smartphone) untuk data visual dan lokasi.</p>
+                <p>Sensor dan kamera mengumpulkan data kondisi sungai secara langsung, memanfaatkan kembali perangkat smartphone yang masih layak digunakan sebagai edge node.</p>
               </div>
               
               <div className="border-2 border-brand-dark p-8 shadow-[4px_4px_0px_0px_rgba(23,23,23,1)] bg-brand-water text-white">
                 <Activity className="w-12 h-12 mb-6" />
                 <h3 className="text-xl font-bold uppercase mb-3">2. ANALYZE</h3>
-                <p>Data lokal diintegrasikan dengan cuaca dan tren ketinggian muka air (time-series) untuk risk assessment dan estimasi perubahan risiko sungai jangka pendek.</p>
+                <p>Data digabungkan untuk menilai kondisi, risiko, dan tren perubahan. Termasuk analisis kualitas air, tinggi muka air, dan cuaca.</p>
               </div>
               
               <div className="border-2 border-brand-dark p-8 shadow-[4px_4px_0px_0px_rgba(23,23,23,1)] bg-brand-warning">
                 <Droplets className="w-12 h-12 mb-6" />
-                <h3 className="text-xl font-bold uppercase mb-3">3. PARTICIPATE</h3>
-                <p>Masyarakat dapat memantau info yang disederhanakan dan mengirimkan laporan. Laporan diverifikasi silang dengan data sensor sebelum ditindaklanjuti.</p>
+                <h3 className="text-xl font-bold uppercase mb-3">3. RESPOND</h3>
+                <p>Informasi dan himbauan diberikan kepada masyarakat, sementara laporan diteruskan melalui proses verifikasi dan tindak lanjut.</p>
               </div>
             </div>
           </div>

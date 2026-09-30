@@ -61,12 +61,16 @@ export default function DashboardMasyarakat() {
               <div className="text-3xl font-display font-bold">{scenario.telemetry.rainfall.toFixed(1)} <span className="text-sm">mm</span></div>
             </div>
             <div className="border-2 border-brand-dark p-4">
-              <div className="text-sm font-bold text-gray-500 uppercase mb-1">pH Air</div>
-              <div className="text-3xl font-display font-bold">{scenario.telemetry.pH.toFixed(1)}</div>
+              <div className="text-sm font-bold text-gray-500 uppercase mb-1">Status Kualitas Air</div>
+              <div className={`text-xl font-display font-bold mt-2 uppercase ${['stabil', 'air_naik', 'hujan_intensif'].includes(currentScenario) ? 'text-brand-forest' : 'text-brand-critical'}`}>
+                {['stabil', 'air_naik', 'hujan_intensif'].includes(currentScenario) ? 'Normal' : 'Menurun'}
+              </div>
             </div>
             <div className="border-2 border-brand-dark p-4">
-              <div className="text-sm font-bold text-gray-500 uppercase mb-1">Oksigen (DO)</div>
-              <div className="text-3xl font-display font-bold">{scenario.telemetry.do.toFixed(1)} <span className="text-sm">mg/L</span></div>
+              <div className="text-sm font-bold text-gray-500 uppercase mb-1">Estimasi Risiko (6 Jam)</div>
+              <div className="text-xl font-display font-bold mt-2 uppercase text-brand-warning">
+                {scenario.forecast6h}
+              </div>
             </div>
           </div>
 
